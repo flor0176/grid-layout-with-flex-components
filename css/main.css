@@ -1,13 +1,33 @@
+/* ================ Global Values =================== */
+/*  */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* CSS code from the README.md file */
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #222;
   }
   
+  /* Emoji cards layout using the grid properties to the main wrapper*/
+  .emojis {
+    max-width: 1200px;
+    display: grid; /* Establish the grid container */
+    grid-template-columns: repeat(2, 400px); /* Set the number of columns and width */
+    gap: 15px; /*Set the free space between the columns */
+  }
+
   .emoji {
     border: 1px solid #222;
     border-radius: 8px;
     padding: 1rem;
+    display: flex; /* Establish the flex container */
+    flex-direction: column; /* Define the direction of the main axis as vertical in the flex container */
   }
   
   .emoji h2 {
@@ -20,9 +40,13 @@ body {
     background-color: #781BAA;
     color: white;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 8px;  
+    margin-top: auto; /* Align the buttons with the bottom of the cards */
   }
   
   .icon {
     font-size: 4rem;
+    order: -1; /* Position the icon to the top */
+    text-align: center; /* Align the icon to the center */
   }
+  
